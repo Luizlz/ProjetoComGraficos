@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Grupo Serviçes - WTTX</title>
+		<meta name="description" content="A sidebar menu as seen on the Google Nexus 7 website" />
+		<meta name="keywords" content="google nexus 7 menu, css transitions, sidebar, side menu, slide out menu" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<ul id="gn-menu" class="gn-menu-main">
+				
+				<li class="gn-trigger">
+					<a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+					<nav class="gn-menu-wrapper">
+						<div class="gn-scroller">
+							<ul class="gn-menu">
+								
+								<li>
+									<a class="" href="Acre.html"> Acre</a>
+									<a class="" href="Alagoas.html">Alagoas</a>
+									<a class="" href="Amazonas.html">Amazonas</a>
+									<a class="" href="Amapa.html">Amapá</a>
+									<a class="" href="Bahia.html">Bahia</a>
+									<a class="" href="Ceara.html">Ceara</a>
+									<a class="" href="Distrito Federal.html">Distrito Federal</a>
+									<a class="" href="Espirito Santo.html">Espirito Santo</a>
+									<a class="" href="Goiás.html">Goiás</a>
+									<a class="" href="Maranhão.html">Maranhão</a>
+								</li>
+							
+								
+							</ul>
+						</div><!-- /gn-scroller -->
+					</nav>
+				</li>
+	<li class= "tipo-de-letra">			
+				<section class="about sections" id="#Inicio"></section>
+				<li><a href="index.html">Inicio</a></li>
+				
+				<li>
+					<form>
+						<div>
+							
+						  <label for="festa"><span></span>
+						</a>
+						<input type="date" 
+						  	id="festa" name="festa"
+							   min="2019-04-01",
+						   	   max="2019-04-03" required>
+						   
+						</label>
+
+						  <span class="validity"></span>
+						</div>
+						<div>
+						</div>
+					  </form>
+
+				</li>
+				
+
+				
+
+				<li><a href="tipo.html"><span>Tipo</span></a>
+					<ul class="menu"> 
+							<ul>
+								<li><a href="tipo2.html">Digital</a></li>
+								<li><a href="tipo3.html">Humano</a></li>
+								
+							</ul>
+						
+							  
+					</ul>
+				</li>
+				
+				
+				<li><a href="Produto.html"><span>Produtos</span></a>
+					<ul class="menu"> 
+						<ul>
+							<li><a href="controle.html">CONTROLE</a></li>
+							<li><a href="pos.html">POS_PURO</a></li>
+							<li><a href="web.html">WEB</a></li>
+							<li><a href="wttx.html">WTTX</a></li>
+							<li><a href="fixo.html">FIXO</a></li>
+							
+						</ul>
+						
+							  
+					</ul>
+				</li>
+				
+				<li>
+					<a class="" href="index.html"><span>⌂</span></a>
+				</li>
+			</ul>
+			
+			<header>
+			  <section class="about sections" id="#topo"></section>
+
+				<title>Grafico01</title>
+				<h1 class="Titulo-Grafico">WTTX Por Estado</h1>
+				<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+				<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+				<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+			
+			
+			
+			<div id="chartdiv"></div>
+			
+			
+			
+			
+			
+			
+			
+			</header> 
+		</div><!-- /container -->
+		<script src="js/classie.js"></script>
+		<script src="js/gnmenu.js"></script>
+		
+		<script>
+			new gnMenu( document.getElementById( 'gn-menu' ) );
+		</script>
+	</body>
+	
+	<script>
+		am4core.ready(function() {
+		
+		// Themes begin
+		am4core.useTheme(am4themes_animated);
+		// Themes end
+		
+		// Create chart instance
+		var chart = am4core.create("chartdiv", am4charts.PieChart);
+		
+		// Add data
+		chart.data = [ {
+		  "country": "Amazonas",
+		  "litres": 1
+		}, {
+		  "country": "Bahia",
+		  "litres": 1
+		}, {
+		  "country": "Goiás",
+		  "litres": 1
+		} ];
+		
+		// Set inner radius
+		chart.innerRadius = am4core.percent(50);
+		
+		// Add and configure Series
+		var pieSeries = chart.series.push(new am4charts.PieSeries());
+		pieSeries.dataFields.value = "litres";
+		pieSeries.dataFields.category = "country";
+		pieSeries.slices.template.stroke = am4core.color("#fff");
+		pieSeries.slices.template.strokeWidth = 2;
+		pieSeries.slices.template.strokeOpacity = 1;
+		
+		// This creates initial animation
+		pieSeries.hiddenState.properties.opacity = 1;
+		pieSeries.hiddenState.properties.endAngle = -90;
+		pieSeries.hiddenState.properties.startAngle = -90;
+		
+		}); // end am4core.ready()
+		</script>
+							
+
+</html>
